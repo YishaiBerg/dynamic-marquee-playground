@@ -1,8 +1,7 @@
 import Vue from 'vue';
 import App from './App.vue';
 import vuetify from './plugins/vuetify';
-// import DynamicMarquee from 'vue-dynamic-marquee';
-import DynamicMarquee from './dydemo/DynamicMarquee';
+import DynamicMarquee from 'vue-dynamic-marquee';
 import 'prismjs';
 // import 'prismjs/themes/prism.css';
 import 'prismjs/themes/prism-tomorrow.css';
