@@ -1,35 +1,40 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">Dynamic Marquee</div>
+    <v-app-bar app color="primary" dark hide-on-scroll>
+      <v-icon class="mr-2">mdi-vuejs</v-icon>
+      <v-toolbar-title>Vue Dynamic Marquee</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
-      <v-btn href="https://github.com/YishaiBerg/vue-dynamic-marquee" target="_blank" text>
+      <v-btn
+        href="https://github.com/YishaiBerg/vue-dynamic-marquee"
+        target="_blank"
+        icon
+        class="mr-lg-2"
+      >
         <v-icon>mdi-github</v-icon>
-        <!-- <span class="mr-2">Latest Release</span> -->
-        <!-- <v-icon>mdi-open-in-new</v-icon> -->
       </v-btn>
     </v-app-bar>
 
     <v-content>
       <v-container fluid>
+        <install />
         <v-row>
           <v-col cols="12" lg="6" class="order-lg-1">
-            <Marquee 
-            :elNum="elNum" 
-            :wrapperHeight="wrapperHeight" 
-            :wrapperWidth="wrapperWidth"
-            :direction="direction"
-            :reverse="reverse"
-            :repeat="repeat"
-            :repeatMargin="repeatMargin"
-            :pause="pause"
-            :speed="speed"
-            :hoverPause="hoverPause"
-             />
+            <Marquee
+              :elNum="elNum"
+              :wrapperHeight="wrapperHeight"
+              :wrapperWidth="wrapperWidth"
+              :direction="direction"
+              :reverse="reverse"
+              :repeat="repeat"
+              :repeatMargin="repeatMargin"
+              :pause="pause"
+              :speed="speed"
+              :hoverPause="hoverPause"
+            />
           </v-col>
-                    <v-col cols="12" lg="6">
+          <v-col cols="12" lg="6">
             <controls
               :elNum="elNum"
               :width="wrapperWidth"
@@ -56,22 +61,30 @@
           </v-col>
         </v-row>
       </v-container>
+        <v-footer>
+          <v-card flat tile width="100%" class="amber lighten-1 text-center">
+            <v-card-text class="white--text">
+              Author:
+              <a href="mailto:ymb123@gmail.com">Yishai Berg</a>. License: MIT.
+            </v-card-text>
+          </v-card>
+        </v-footer>
     </v-content>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
 import Marquee from "./components/Marquee.vue";
 import Controls from "./components/Controls.vue";
+import Install from "./components/Install.vue";
 export default Vue.extend({
   name: "App",
 
   components: {
-    HelloWorld,
     Marquee,
-    Controls
+    Controls,
+    Install
   },
 
   data: () => ({
@@ -84,7 +97,7 @@ export default Vue.extend({
     repeatMargin: 10,
     pause: false,
     hoverPause: true,
-    speed: {type: 'pps', number: 100},
+    speed: { type: "pps", number: 100 }
   }),
 
   methods: {
@@ -95,7 +108,7 @@ export default Vue.extend({
     }
   },
   mounted() {
-    if(window.innerWidth < 1264) {
+    if (window.innerWidth < 1264) {
       this.wrapperWidth = 80;
     }
   }

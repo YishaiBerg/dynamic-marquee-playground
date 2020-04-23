@@ -1,16 +1,6 @@
 <template>
   <div>
-    <v-card color="cyan">
-      <v-card-title>Dimensions:</v-card-title>
-    </v-card>
-    <el-num :elNum="elNum" @change-elnum="$emit('change-elnum', $event)" />
-    <wrapper-dimension
-      :width="width"
-      :height="height"
-      @change-width="$emit('change-wrapper-width', $event)"
-      @change-height="$emit('change-wrapper-height', $event)"
-    />
-    <v-card color="cyan" class="mt-8">
+    <v-card color="green darken-1" class="mt-2" dark>
       <v-card-title>Props:</v-card-title>
       <v-card-subtitle>Expand rows to control</v-card-subtitle>
     </v-card>
@@ -96,6 +86,17 @@
         </td>
       </template>
     </v-data-table>
+        <v-card color="green darken-1" dark class="mt-4">
+      <v-card-title>Dimensions:</v-card-title>
+    </v-card>
+    <blockquote class="blockquote">The component should be able to accomodate for any changes in wrapper or slot content dimensions that take place on the fly. Number of times to repeat slots will be recalculated, and margin between them will be unharmed.</blockquote>
+    <el-num :elNum="elNum" @change-elnum="$emit('change-elnum', $event)" />
+    <wrapper-dimension
+      :width="width"
+      :height="height"
+      @change-width="$emit('change-wrapper-width', $event)"
+      @change-height="$emit('change-wrapper-height', $event)"
+    />
   </div>
 </template>
 
