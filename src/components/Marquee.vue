@@ -7,8 +7,14 @@
     >
       <dynamic-marquee 
       :direction="direction"
+      :reverse="reverse"
+      :repeat="repeat"
+      :speed="speed"
+      :pause="pause"
+      :hoverPause="hoverPause"
+      :repeatMargin="repeatMargin"
       >
-        <div class="marquee-wrapper">
+        <div class="marquee-wrapper" :class="{'flex-column': direction === 'column'}">
           <v-card
             v-for="i in elNum"
             :key="i"
