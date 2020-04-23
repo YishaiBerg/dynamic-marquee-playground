@@ -20,13 +20,20 @@
               :elNum="elNum"
               :width="wrapperWidth"
               :height="wrapperHeight"
+              :direction="direction"
+              @change-direction="direction = $event"
               @change-elnum="changeElNum"
               @change-wrapper-height="wrapperHeight += $event"
               @change-wrapper-width="wrapperWidth += $event"
             />
           </v-col>
           <v-col cols="12" lg="6">
-            <Marquee :elNum="elNum" :wrapperHeight="wrapperHeight" :wrapperWidth="wrapperWidth" />
+            <Marquee 
+            :elNum="elNum" 
+            :wrapperHeight="wrapperHeight" 
+            :wrapperWidth="wrapperWidth"
+            :direction="direction"
+             />
           </v-col>
         </v-row>
       </v-container>
@@ -51,7 +58,8 @@ export default Vue.extend({
   data: () => ({
     elNum: 1,
     wrapperHeight: 40,
-    wrapperWidth: 25
+    wrapperWidth: 25,
+    direction: "column"
   }),
 
   methods: {

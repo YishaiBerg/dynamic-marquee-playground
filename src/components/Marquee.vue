@@ -1,9 +1,21 @@
 <template>
   <div class>
-    <v-card elevation="24" class="pa-3 wrapper" :style="{height: wrapperHeight + 'vh', width: wrapperWidth + 'vw'}">
-      <dynamic-marquee direction="row">
+    <v-card
+      elevation="24"
+      class="pa-3 wrapper"
+      :style="{height: wrapperHeight + 'vh', width: wrapperWidth + 'vw'}"
+    >
+      <dynamic-marquee 
+      :direction="direction"
+      >
         <div class="marquee-wrapper">
-          <v-card v-for="i in elNum" :key="i" color="primary" dark class="pa-3 ma-3">Element {{i}}</v-card>
+          <v-card
+            v-for="i in elNum"
+            :key="i"
+            color="primary"
+            dark
+            class="pa-3 ma-3 text-center"
+          >Element {{i}}</v-card>
         </div>
       </dynamic-marquee>
     </v-card>
@@ -32,6 +44,50 @@ export default Vue.extend({
     wrapperWidth: {
       type: Number,
       default: 25
+    },
+    speed: {
+      type: Object,
+      default() {
+        return {
+          type: "pps",
+          number: 100
+        };
+      },
+      validator(val) {
+        return (
+          val.type &&
+          ["pps", "duration"].includes(val.type) &&
+          val.number &&
+          !isNaN(val.number)
+        );
+      }
+    },
+    repeat: {
+      type: Boolean,
+      default: true
+    },
+    repeatMargin: {
+      type: Number,
+      default: 10
+    },
+    hoverPause: {
+      type: Boolean,
+      default: true
+    },
+    pause: {
+      type: Boolean,
+      default: false
+    },
+    direction: {
+      type: String,
+      default: "column",
+      validator(val) {
+        return ["column", "row"].includes(val);
+      }
+    },
+    reverse: {
+      type: Boolean,
+      default: false
     }
   }
 });
