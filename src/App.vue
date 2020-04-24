@@ -74,30 +74,30 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Marquee from "./components/Marquee.vue";
-import Controls from "./components/Controls.vue";
-import Install from "./components/Install.vue";
+import Vue from 'vue';
+import Marquee from './components/Marquee.vue';
+import Controls from './components/Controls.vue';
+import Install from './components/Install.vue';
 export default Vue.extend({
-  name: "App",
+  name: 'App',
 
   components: {
     Marquee,
     Controls,
-    Install
+    Install,
   },
 
   data: () => ({
     elNum: 1,
     wrapperHeight: 70,
     wrapperWidth: 25,
-    direction: "column",
+    direction: 'column',
     reverse: false,
     repeat: true,
     repeatMargin: 10,
     pause: false,
     hoverPause: true,
-    speed: { type: "pps", number: 100 }
+    speed: { type: 'pps', number: 100 },
   }),
 
   methods: {
@@ -105,12 +105,12 @@ export default Vue.extend({
       if (this.elNum + num > 0) {
         this.elNum += num;
       }
-    }
+    },
   },
   mounted() {
     if (window.innerWidth < 1264) {
       this.wrapperWidth = 80;
     }
-  }
+  },
 });
 </script>

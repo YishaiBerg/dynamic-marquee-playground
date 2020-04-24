@@ -29,11 +29,11 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
 // import DynamicMarquee from "vue-dynamic-marquee";
-import HelloWorld from "./HelloWorld.vue";
+import HelloWorld from './HelloWorld.vue';
 export default Vue.extend({
-  name: "marquee",
+  name: 'marquee',
   components: {
     // DynamicMarquee,
     // HelloWorld
@@ -41,61 +41,61 @@ export default Vue.extend({
   props: {
     elNum: {
       type: Number,
-      default: 1
+      default: 1,
     },
     wrapperHeight: {
       type: Number,
-      default: 40
+      default: 40,
     },
     wrapperWidth: {
       type: Number,
-      default: 25
+      default: 25,
     },
     speed: {
       type: Object,
       default() {
         return {
-          type: "pps",
-          number: 100
+          type: 'pps',
+          number: 100,
         };
       },
       validator(val) {
         return (
           val.type &&
-          ["pps", "duration"].includes(val.type) &&
+          ['pps', 'duration'].includes(val.type) &&
           val.number &&
           !isNaN(val.number)
         );
-      }
+      },
     },
     repeat: {
       type: Boolean,
-      default: true
+      default: true,
     },
     repeatMargin: {
       type: Number,
-      default: 10
+      default: 10,
     },
     hoverPause: {
       type: Boolean,
-      default: true
+      default: true,
     },
     pause: {
       type: Boolean,
-      default: false
+      default: false,
     },
     direction: {
       type: String,
-      default: "column",
+      default: 'column',
       validator(val) {
-        return ["column", "row"].includes(val);
-      }
+        return ['column', 'row'].includes(val);
+      },
     },
     reverse: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 });
 </script>
 

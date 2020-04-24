@@ -3,23 +3,23 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import NumInput from "./NumInput.vue";
+import Vue from 'vue';
+import NumInput from './NumInput.vue';
 
 export default Vue.extend({
-  name: "el-num",
+  name: 'el-num',
   components: {
-    NumInput
+    NumInput,
   },
   props: {
     elNum: {
       type: Number,
-      default: 1
-    }
+      default: 1,
+    },
   },
   data() {
     return {};
-  }
+  },
 });
 </script>
 

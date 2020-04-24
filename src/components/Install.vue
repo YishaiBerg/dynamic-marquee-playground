@@ -46,14 +46,14 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
 // @ts-ignore
-import Prism from "vue-prism-component";
+import Prism from 'vue-prism-component';
 
 export default Vue.extend({
-  name: "install",
+  name: 'install',
   components: {
-    Prism
+    Prism,
   },
   data() {
     return {
@@ -76,10 +76,10 @@ export default Vue.extend({
 \</template\>
 \<script\>
 import DynamicMarquee from 'vue-dynamic-marquee';
-\<\/script\>`
-      }
+\<\/script\>`,
+      },
     };
-  }
+  },
 });
 </script>
 

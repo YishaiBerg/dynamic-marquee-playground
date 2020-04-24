@@ -25,17 +25,17 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
 
 export default Vue.extend({
-  name: "num-input",
+  name: 'num-input',
   props: {
     value: {
       type: Number,
-      default: 1
+      default: 1,
     },
-    label: String
-  }
+    label: String,
+  },
 });
 </script>
 

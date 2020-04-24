@@ -6,25 +6,25 @@
 </template>
 
 <script lang="ts">
-    import Vue from 'vue'
-    import NumInput from './NumInput.vue';
+import Vue from 'vue';
+import NumInput from './NumInput.vue';
 
-    export default Vue.extend({
-        name: "wrapper-dimension",
-        components: {
-            NumInput
+export default Vue.extend({
+    name: 'wrapper-dimension',
+    components: {
+        NumInput,
+    },
+    props: {
+        width: {
+            type: Number,
+            default: 25,
         },
-        props: {
-            width: {
-                type: Number,
-                default: 25
-            },
-            height: {
-                type: Number,
-                default: 40
-            }
+        height: {
+            type: Number,
+            default: 40,
         },
-    })
+    },
+});
 </script>
 
 <style scoped>

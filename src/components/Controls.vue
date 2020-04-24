@@ -101,138 +101,138 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import ElNum from "./ElNum.vue";
-import WrapperDimension from "./WrapperDimension.vue";
-import Direction from "./Direction.vue";
+import Vue from 'vue';
+import ElNum from './ElNum.vue';
+import WrapperDimension from './WrapperDimension.vue';
+import Direction from './Direction.vue';
 export default Vue.extend({
-  name: "controls",
+  name: 'controls',
   components: {
     ElNum,
     WrapperDimension,
-    Direction
+    Direction,
   },
   props: {
     elNum: {
       type: Number,
-      default: 1
+      default: 1,
     },
     width: {
       type: Number,
-      default: 25
+      default: 25,
     },
     height: {
       type: Number,
-      default: 40
+      default: 40,
     },
     speed: {
       type: Object,
       default() {
         return {
-          type: "pps",
-          number: 100
+          type: 'pps',
+          number: 100,
         };
       },
       validator(val) {
         return (
           val.type &&
-          ["pps", "duration"].includes(val.type) &&
+          ['pps', 'duration'].includes(val.type) &&
           val.number &&
           !isNaN(val.number)
         );
-      }
+      },
     },
     repeat: {
       type: Boolean,
-      default: true
+      default: true,
     },
     repeatMargin: {
       type: Number,
-      default: 10
+      default: 10,
     },
     hoverPause: {
       type: Boolean,
-      default: true
+      default: true,
     },
     pause: {
       type: Boolean,
-      default: false
+      default: false,
     },
     direction: {
       type: String,
-      default: "column",
+      default: 'column',
       validator(val) {
-        return ["column", "row"].includes(val);
-      }
+        return ['column', 'row'].includes(val);
+      },
     },
     reverse: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
       tableHeaders: [
-        { text: "Name", value: "name", sortable: false },
-        { text: "Type", value: "type", sortable: false },
-        { text: "Default", value: "default", sortable: false },
-        { text: "Explanation", value: "explanation", sortable: false },
-        { text: "", value: "data-table-expand" }
+        { text: 'Name', value: 'name', sortable: false },
+        { text: 'Type', value: 'type', sortable: false },
+        { text: 'Default', value: 'default', sortable: false },
+        { text: 'Explanation', value: 'explanation', sortable: false },
+        { text: '', value: 'data-table-expand' },
       ],
       tableItems: [
         {
-          name: "direction",
-          type: "'row'|'column'",
-          default: "'column'",
-          explanation: "animation direction"
+          name: 'direction',
+          type: '\'row\'|\'column\'',
+          default: '\'column\'',
+          explanation: 'animation direction',
         },
         {
-          name: "reverse",
-          type: "boolean",
-          default: "false",
+          name: 'reverse',
+          type: 'boolean',
+          default: 'false',
           explanation:
-            "By default the slot will translate according to document flow - top to bottom for {direction: 'column'} and and for {direction: 'row'} in accordance to ltr-rtl direction style of the wrapper. This behaviour can be reversed with this prop."
+            'By default the slot will translate according to document flow - top to bottom for {direction: \'column\'} and and for {direction: \'row\'} in accordance to ltr-rtl direction style of the wrapper. This behaviour can be reversed with this prop.',
         },
         {
-          name: "repeat",
-          type: "boolean",
-          default: "true",
+          name: 'repeat',
+          type: 'boolean',
+          default: 'true',
           explanation:
-            "If true the slot will repeat itself so as not to leave whitespace as the slot is finishing to translate out of the wrapper. The component will compute the number of times to repeat the slot in accordance with the repeatMargin prop."
+            'If true the slot will repeat itself so as not to leave whitespace as the slot is finishing to translate out of the wrapper. The component will compute the number of times to repeat the slot in accordance with the repeatMargin prop.',
         },
         {
-          name: "repeatMargin",
-          type: "number",
-          default: "10",
-          explanation: "Pixels between repeated slots."
+          name: 'repeatMargin',
+          type: 'number',
+          default: '10',
+          explanation: 'Pixels between repeated slots.',
         },
         {
-          name: "speed",
-          type: "{type: 'pps'|'duration', number: number}",
-          default: "{type: 'pps', number: 100}",
+          name: 'speed',
+          type: '{type: \'pps\'|\'duration\', number: number}',
+          default: '{type: \'pps\', number: 100}',
           explanation:
-            "There are two ways to define the translation speed. When choosing 'pps', 'number' is number of pixels per second. When choosing 'duration', 'number' is the number of milliseconds in which the slot will translate from the begining to the end of the wrapper element."
+            'There are two ways to define the translation speed. When choosing \'pps\', \'number\' is number of pixels per second. When choosing \'duration\', \'number\' is the number of milliseconds in which the slot will translate from the begining to the end of the wrapper element.',
         },
         {
-          name: "hoverPause",
-          type: "boolean",
-          default: "true",
+          name: 'hoverPause',
+          type: 'boolean',
+          default: 'true',
           explanation:
-            "Should animation pause upon hovering over wrapper element."
+            'Should animation pause upon hovering over wrapper element.',
         },
         {
-          name: "pause",
-          type: "boolean",
-          default: "false",
-          explanation: "Use to programmaticlly pause animation."
-        }
+          name: 'pause',
+          type: 'boolean',
+          default: 'false',
+          explanation: 'Use to programmaticlly pause animation.',
+        },
       ],
       expanded: [],
       txtRules: [
-        (v: string) => !isNaN(+v) || "Value must be a number",
-        (v: string) => +v >= 0 || "Value cannot be a negative number"
-      ]
+        (v: string) => !isNaN(+v) || 'Value must be a number',
+        (v: string) => +v >= 0 || 'Value cannot be a negative number',
+      ],
     };
-  }
+  },
 });
 </script>

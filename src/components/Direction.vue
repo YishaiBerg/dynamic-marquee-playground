@@ -10,16 +10,16 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
 
 export default Vue.extend({
-  name: "direction",
+  name: 'direction',
   props: {
     direction: {
       type: String,
-      default: "column"
-    }
-  }
+      default: 'column',
+    },
+  },
 });
 </script>
 
