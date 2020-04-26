@@ -89,7 +89,7 @@
         <v-card color="green darken-1" dark class="mt-4">
       <v-card-title>Dimensions:</v-card-title>
     </v-card>
-    <blockquote class="blockquote">The component should be able to accomodate for any changes in wrapper or slot content dimensions that take place on the fly. Number of times to repeat slots will be recalculated, and margin between them will be unharmed.</blockquote>
+    <blockquote class="blockquote">The component should be able to accommodate for any changes in wrapper or slot content dimensions that take place on the fly. Number of times to repeat the slot will be recalculated, and the margin between them will remain unharmed.</blockquote>
     <el-num :elNum="elNum" @change-elnum="$emit('change-elnum', $event)" />
     <wrapper-dimension
       :width="width"
@@ -236,3 +236,9 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style>
+#app .v-data-table__mobile-row__header {
+  margin-right: 15px;
+}
+</style>

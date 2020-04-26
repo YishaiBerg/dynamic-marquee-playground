@@ -37,7 +37,7 @@
             <prism language="html">{{texts.local}}</prism>
           </v-row>
                     <v-row justify="center">
-            <blockquote class="blockquote">The slot contents will translate across the component's immediate wrapper. Take note that since the slot will be absolutly positioned, the wrapper's width and height cannot rely on the contents.</blockquote>
+            <blockquote class="blockquote">The slot contents will translate across the component's immediate wrapper. Take note that since the slot will be absolutely positioned, the wrapper's width and height cannot rely on the contents.</blockquote>
           </v-row>
         </v-card>
       </v-dialog>
